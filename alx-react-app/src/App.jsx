@@ -13,10 +13,7 @@ function App() {
       {/* <WelcomeMessage /> */}
       <Header />
       <MainContent />
-      <UserProfile
-        name="Sylvester Kormla"
-        age="30"
-        bio="Loves coding and analysing data" />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <Footer />
     </>
   );
