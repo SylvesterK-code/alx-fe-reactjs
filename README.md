@@ -255,3 +255,108 @@ Commit Message Example:
 git add .
 git commit -m "Add WelcomeMessage component and modify JSX structure"
 git push origin main
+
+
+
+
+
+
+
+
+
+
+
+---
+
+## 🧩 Task 2: Create Specific Components in a React Application
+
+### 🎯 Objective
+To learn how to create and assemble multiple specific React components into a main application component, demonstrating React’s modular structure.
+
+---
+
+### 🪜 Steps Implemented
+
+#### 1. Created Three Components under `src/components`
+- **Header.jsx**
+```jsx
+function Header() {
+  return (
+    <header>
+      <h1>My Favorite Cities</h1>
+    </header>
+  );
+}
+
+export default Header;
+MainContent.jsx
+
+
+function MainContent() {
+  return (
+    <main>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
+    </main>
+  );
+}
+
+export default MainContent;
+Footer.jsx
+
+
+function Footer() {
+  return (
+    <footer>
+      <p>© 2023 City Lovers</p>
+    </footer>
+  );
+}
+
+export default Footer;
+2. Integrated the Components into App.jsx
+
+
+import './App.css';
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <>
+      <Header />
+      <MainContent />
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+3. Ran and Verified the Application
+Run the app:
+
+
+npm run dev
+Expected output in the browser:
+
+
+My Favorite Cities
+I love to visit New York, Paris, and Tokyo.
+© 2023 City Lovers
+🧠 Key Concepts Learned
+Concept	Description
+Component-Based Architecture	React applications are built using small, reusable pieces called components.
+Functional Components	Simple JavaScript functions that return JSX elements.
+Composition	Combining multiple components to form a complete UI.
+Reusability	Each component can be used multiple times across different parts of the app.
+
+🏁 Summary
+By completing this task, I learned how to structure a React app using multiple independent components.
+This reinforced the importance of reusability and clean separation of concerns within a project.
+
+Commit Message Example:
+
+
+git add .
+git commit -m "Add Header, MainContent, and Footer components and integrate into App.jsx"
+git push origin main
