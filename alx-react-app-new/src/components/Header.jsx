@@ -7,7 +7,7 @@ function Header() {
         backgroundColor: "navy",
         color: "white",
         textAlign: "center",
-        padding: "20px 0",
+        padding: "1px 0",
         fontFamily: "Arial, sans-serif",
       }}
     >

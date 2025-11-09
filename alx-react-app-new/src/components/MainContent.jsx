@@ -4,10 +4,10 @@ function MainContent() {
   return (
     <main
       style={{
-        padding: "20px",
-        backgroundColor: "#eef",
-        textAlign: "center",
-        minHeight: "200px",
+        padding: '20px',
+        backgroundColor: '#eef',
+        textAlign: 'center',
+        minHeight: '100px',
       }}
     >
       <h2>Welcome to My Travel Page</h2>
