@@ -1,5 +1,5 @@
 // Import the Zustand store
-import useRecipeStore from "../store/recipeStore";
+import useRecipeStore from "./recipeStore";
 
 const RecipeList = () => {
   // Access the 'recipes' state from the store
