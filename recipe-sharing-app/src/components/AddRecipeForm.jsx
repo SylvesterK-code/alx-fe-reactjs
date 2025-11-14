@@ -1,6 +1,6 @@
 // Import useState for handling input fields and useRecipeStore to access the Zustand store
 import { useState } from "react";
-import useRecipeStore from "./recipeStore";
+import useRecipeStore from "../store/recipeStore";
 
 const AddRecipeForm = () => {
   // Extract the 'addRecipe' action from Zustand store
