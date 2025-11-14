@@ -1,57 +1,59 @@
-// // Import the 'create' function from Zustand
-// import { create } from 'zustand';
+// src/components/recipeStore.js
+// Zustand store for recipes + search/filter features
 
-// // Create a Zustand store to manage recipes
-// const useRecipeStore = create((set) => ({
-//   // Initial state: an empty array of recipes
-//   recipes: [],
-
-//   // Action to add a new recipe
-//   // It takes a new recipe object and appends it to the existing array
-//   addRecipe: (newRecipe) =>
-//     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-
-//   // Action to set or replace the entire list of recipes (useful for initialization)
-//   setRecipes: (recipes) => set({ recipes }),
-// }));
-
-// // Export the store so it can be used in other components
-// export default useRecipeStore;
-
-
-
-
-
-
-// Import Zustand's create function
 import { create } from "zustand";
 
-// Zustand store for managing recipes globally
 const useRecipeStore = create((set) => ({
-  // Initial list of recipes (empty at first)
+  // All recipes stored in the app
   recipes: [],
 
-  // ACTION: Add a new recipe to the list
+  // Search term from SearchBar
+  searchTerm: "",
+
+  // Filtered results
+  filteredRecipes: [],
+
+  // Add a new recipe
   addRecipe: (newRecipe) =>
     set((state) => ({
-      // Spread existing recipes + add the new one
       recipes: [...state.recipes, newRecipe],
+      filteredRecipes: [...state.recipes, newRecipe], // update filtered list
     })),
 
-  // ACTION: Update a recipe by ID
-  updateRecipe: (updatedRecipe) =>
-    set((state) => ({
-      recipes: state.recipes.map((recipe) =>
-        // Replace only the recipe with the matching ID
-        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
-      ),
-    })),
-
-  // ACTION: Delete a recipe by ID
+  // Delete a recipe by ID
   deleteRecipe: (id) =>
+    set((state) => {
+      const updated = state.recipes.filter((recipe) => recipe.id !== id);
+      return {
+        recipes: updated,
+        filteredRecipes: updated,
+      };
+    }),
+
+  // Update an existing recipe
+  updateRecipe: (updatedRecipe) =>
+    set((state) => {
+      const updated = state.recipes.map((recipe) =>
+        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+      );
+      return {
+        recipes: updated,
+        filteredRecipes: updated,
+      };
+    }),
+
+  // Update ONLY the search term (no need for state here)
+  setSearchTerm: (term) =>
+    set({
+      searchTerm: term,
+    }),
+
+  // Filter recipes using the current search term
+  filterRecipes: () =>
     set((state) => ({
-      // Keep only recipes whose ID does not match
-      recipes: state.recipes.filter((recipe) => recipe.id !== id),
+      filteredRecipes: state.recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+      ),
     })),
 }));
 
