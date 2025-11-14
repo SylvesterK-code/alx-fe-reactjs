@@ -28,6 +28,11 @@
 
 
 
+// App.jsx
+// -----------------------------------
+// Routing logic ONLY, no <Router> here
+// -----------------------------------
+
 import { Routes, Route } from "react-router-dom";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
@@ -38,9 +43,10 @@ const App = () => {
     <div className="app-container">
       <h1>🍲 Recipe Sharing App</h1>
 
-      {/* Define navigation paths */}
+      {/* Define all routes */}
       <Routes>
-        {/* Home page: list + add form */}
+
+        {/* Home page */}
         <Route
           path="/"
           element={
