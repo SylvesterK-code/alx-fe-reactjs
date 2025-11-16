@@ -40,6 +40,7 @@ body {
 /* set size of the textarea to only expand vertically */
 textarea {
   resize: vertical;
+  height: 100px;
   /* min-height: 100px; */
 }
 
@@ -65,4 +66,24 @@ textarea {
 /* Add hover effect for interactivity */
 .recipe-form button:hover {
   background-color: #218838;
+}
+
+/* Add hover effect for interactivity */
+.delete-btn {
+  background-color: #eb0404;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.favorites-list {
+  background-color: #0a91df;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
