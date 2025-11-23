@@ -45,7 +45,11 @@ const config = {
 // ------------------------------
 // 1. Direct user lookup (Basic)
 // ------------------------------
+<<<<<<< HEAD
 export const fetchUserDataDir = async (username) => {
+=======
+export const fetchUserData = async (username) => {
+>>>>>>> af944cc7b7245d29971b6f88823a39a6ad990f14
   const url = `https://api.github.com/users/${username}`;
   const response = await axios.get(url, config);
   return response.data;
@@ -90,9 +94,15 @@ export const searchUsers = async ({
 // 3. Combined logic (Basic Search)
 // Try exact user lookup first, fallback to keyword search
 // ------------------------------
+<<<<<<< HEAD
 export const fetchUserData = async (query) => {
   try {
     const exactUser = await fetchUserDataDir(query);
+=======
+export const combinedSearch = async (query) => {
+  try {
+    const exactUser = await fetchUserData(query);
+>>>>>>> af944cc7b7245d29971b6f88823a39a6ad990f14
     return {
       type: "single",
       data: exactUser,
