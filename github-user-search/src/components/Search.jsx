@@ -106,7 +106,7 @@ function Search() {
       const response = await combinedSearch(query);
       setResult(response);
     } catch (_) {
-      setError("Something went wrong. Try again.");
+      setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }
