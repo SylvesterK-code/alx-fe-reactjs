@@ -97,7 +97,7 @@ function UserProfile() {
     <div
       className="
         bg-white 
-        p-4 sm:p-6 md:p-8 
+        p-4 sm:p-4 md:p-8 
         max-w-xs sm:max-w-sm 
         mx-auto my-10 
         rounded-xl shadow-lg text-center
