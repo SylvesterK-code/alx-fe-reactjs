@@ -97,8 +97,8 @@ function UserProfile() {
     <div
       className="
         bg-white 
-        p-4 sm:p-4 md:p-8 
-        max-w-xs sm:max-w-sm 
+        p-4 sm:p-4 sm:p-6 md:p-8 
+        max-w-xs sm:max-w-sm md:max-w-sm 
         mx-auto my-10 
         rounded-xl shadow-lg text-center
       "
@@ -128,7 +128,7 @@ function UserProfile() {
       </h1>
 
       {/* Role */}
-      <p className="text-sm sm:text-base text-gray-500 mb-4">
+      <p className="text-sm sm:text-base md:text-xl text-gray-500 mb-4">
         Software Engineer
       </p>
 
@@ -138,7 +138,7 @@ function UserProfile() {
           <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg"
             alt="GitHub"
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
         </a>
 
@@ -146,7 +146,7 @@ function UserProfile() {
           <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg"
             alt="LinkedIn"
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
         </a>
 
@@ -154,7 +154,7 @@ function UserProfile() {
           <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/facebook.svg"
             alt="Facebook"
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
         </a>
 
@@ -162,7 +162,7 @@ function UserProfile() {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/X_icon_2.svg/2048px-X_icon_2.svg.png"
             alt="X"
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
         </a>
       </div>
