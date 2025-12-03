@@ -3,11 +3,11 @@
 // import viteLogo from '/vite.svg'
 import './index.css'
 
-function App() {
+import HomePage from "./components/HomePage";
 
-  return (
-    <h1 className="text-4xl font-bold text-green-600">Tailwind 4 works!</h1>
-  );
+function App() {
+  return <HomePage />;
 }
 
-export default App
+export default App;
+
