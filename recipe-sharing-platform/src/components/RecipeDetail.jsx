@@ -28,7 +28,10 @@ const RecipeDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <Link to="/" className="text-blue-600 hover:underline text-lg mb-5 inline-block">
+      <Link
+        to="/"
+        className="text-blue-600 hover:underline text-lg mb-5 inline-block"
+      >
         {/* ← Back to Home */}
         <Button variant="primary" icon={FaHome}>
           Home
@@ -62,10 +65,10 @@ const RecipeDetail = () => {
           </ul>
         </div>
 
-        {/* Instructions Section */}
+        {/* Cooking Instructions Section */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-            Instructions
+            instructions
           </h2>
           <ol className="list-decimal list-inside text-gray-700 space-y-2">
             <li>Step 1: Start preparing the ingredients.</li>
