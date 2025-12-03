@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 import { FaArrowRight } from "react-icons/fa";
 import Button from "./ui/Button";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -18,6 +19,12 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7F2] px-6 py-10">
+      <Link to="/add-recipe">
+        <Button variant="primary" icon={FaPlus}>
+          Add New Recipe
+        </Button>
+      </Link>
+
       {/* Page Header */}
       <h1 className="text-4xl font-bold text-green-700 text-center mb-10">
         🍽️ Recipe Sharing Platform

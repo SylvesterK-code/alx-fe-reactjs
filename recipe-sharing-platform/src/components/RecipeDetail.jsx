@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Button from "./ui/Button";
 
-
 const RecipeDetail = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
@@ -28,10 +27,7 @@ const RecipeDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <Link
-        to="/"
-        className="text-blue-600 hover:underline text-lg mb-5 inline-block"
-      >
+      <Link to="/">
         {/* ← Back to Home */}
         <Button variant="primary" icon={FaHome}>
           Home
