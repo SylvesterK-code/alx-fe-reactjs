@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import {Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import Button from "./ui/Button";
 
@@ -66,7 +65,7 @@ const RecipeDetail = () => {
           </ul>
         </div>
 
-        {/* Cooking Instructions Section */}
+        {/* CookingInstructions Section */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
             instructions

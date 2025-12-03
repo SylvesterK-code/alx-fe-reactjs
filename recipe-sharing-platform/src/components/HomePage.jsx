@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { FaArrowRight } from "react-icons/fa";
 import Button from "./ui/Button";
+import Link from "react-router-dom";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -59,11 +60,11 @@ const HomePage = () => {
                 View Details →
               </a> */}
 
-              <a href={`/recipe/${recipe.id}`}>
+              <Link to={`/recipe/${recipe.id}`}>
                 <Button icon={FaArrowRight} iconPosition="right">
                   View Details
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         ))}
