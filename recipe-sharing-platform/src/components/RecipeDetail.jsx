@@ -65,7 +65,7 @@ const RecipeDetail = () => {
         {/* Instructions Section */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-            Cooking Instructions
+            Instructions
           </h2>
           <ol className="list-decimal list-inside text-gray-700 space-y-2">
             <li>Step 1: Start preparing the ingredients.</li>
