@@ -1,4 +1,9 @@
+// components/HomePage.jsx
+
 import { useEffect, useState } from "react";
+
+import { FaArrowRight } from "react-icons/fa";
+import Button from "./ui/Button";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -42,9 +47,23 @@ const HomePage = () => {
               </p>
 
               {/* View More */}
-              <button className="mt-4 inline-block text-sm font-medium text-green-700 hover:text-green-900">
+              {/* <button className="mt-4 inline-block text-sm font-medium text-green-700 hover:text-green-900">
                 View Recipe →
-              </button>
+              </button> */}
+
+              {/* route */}
+              {/* <a
+                href={`/recipe/${recipe.id}`}
+                className="mt-4 inline-block px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 text-sm sm:text-base md:text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
+              >
+                View Details →
+              </a> */}
+
+              <a href={`/recipe/${recipe.id}`}>
+                <Button icon={FaArrowRight} iconPosition="right">
+                  View Details
+                </Button>
+              </a>
             </div>
           </div>
         ))}
