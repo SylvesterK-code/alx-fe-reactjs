@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "./ui/Button";
-import { FaPlus } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
+import { FaPlus, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const AddRecipeForm = () => {
@@ -19,14 +18,14 @@ const AddRecipeForm = () => {
     if (!ingredients.trim()) {
       newErrors.ingredients = "Ingredients are required";
     } else {
-      // Check if at least 2 ingredients
-      const list = ingredients.split("\n").filter((item) => item.trim() !== "");
-      if (list.length < 2) {
+      const list = ingredients.split("\n").filter((i) => i.trim() !== "");
+      if (list.length < 2)
         newErrors.ingredients = "Please list at least two ingredients";
-      }
     }
 
-    if (!steps.trim()) newErrors.steps = "Preparation steps are required";
+    if (!steps.trim()) {
+      newErrors.steps = "Preparation steps are required";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -34,7 +33,6 @@ const AddRecipeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
 
     const newRecipe = {
@@ -48,22 +46,24 @@ const AddRecipeForm = () => {
 
     alert("Recipe added successfully!");
 
-    // Reset form
     setTitle("");
     setIngredients("");
     setSteps("");
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <Link to="/">
-        <Button variant="primary" icon={FaHome}>
-          Home
-        </Button>
-      </Link>
+    <div className="min-h-screen bg-gray-50 dark:bg-black px-4 sm:px-6 py-8 md:py-12">
+      {/* Back Home Button */}
+      <div className="mb-6">
+        <Link to="/">
+          <Button variant="primary" icon={FaHome}>
+            Back to Home
+          </Button>
+        </Link>
+      </div>
 
-      <div className="max-w-2xl mx-auto p-6 mt-8 bg-green-400 dark:bg-gray-900 rounded-xl shadow-lg">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+      <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto p-6 sm:p-8 bg-green-300 dark:bg-gray-900 rounded-xl shadow-xl">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
           Add a New Recipe
         </h2>
 
@@ -77,7 +77,7 @@ const AddRecipeForm = () => {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full p-3 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 sm:p-4 border rounded-lg bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. Spaghetti Carbonara"
             />
             {errors.title && (
@@ -93,8 +93,8 @@ const AddRecipeForm = () => {
             <textarea
               value={ingredients}
               onChange={(e) => setIngredients(e.target.value)}
-              className="w-full p-3 h-32 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
-              placeholder={"e.g.\n2 eggs\n1 cup of flour"}
+              className="w-full p-3 sm:p-4 h-32 sm:h-40 border rounded-lg bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
+              placeholder={"e.g.\n2 eggs\n1 cup flour"}
             />
             {errors.ingredients && (
               <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>
@@ -109,7 +109,7 @@ const AddRecipeForm = () => {
             <textarea
               value={steps}
               onChange={(e) => setSteps(e.target.value)}
-              className="w-full p-3 h-32 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 sm:p-4 h-32 sm:h-40 border rounded-lg bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-700 focus:ring-2 focus:ring-blue-500"
               placeholder={"e.g.\nBoil water\nAdd pasta\nCook for 10 minutes"}
             />
             {errors.steps && (
@@ -118,9 +118,11 @@ const AddRecipeForm = () => {
           </div>
 
           {/* Submit Button */}
-          <Button type="submit" icon={FaPlus} variant="primary">
-            Add Recipe
-          </Button>
+          <div className="pt-3">
+            <Button type="submit" icon={FaPlus} variant="primary">
+              Add Recipe
+            </Button>
+          </div>
         </form>
       </div>
     </div>
