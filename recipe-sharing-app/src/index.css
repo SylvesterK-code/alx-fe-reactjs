@@ -1,0 +1,89 @@
+/* Apply a clean, readable global style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Container that centers the app */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Styling for the recipe input form */
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+/* Style the text and textarea fields */
+.recipe-form input,
+.recipe-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Style the text fields */
+.search-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+
+/* set size of the textarea to only expand vertically */
+textarea {
+  resize: vertical;
+  height: 100px;
+  /* min-height: 100px; */
+}
+
+/* Button with green background */
+.recipe-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Recipe list items */
+.recipe-list .recipe-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Add hover effect for interactivity */
+.recipe-form button:hover {
+  background-color: #218838;
+}
+
+/* Add hover effect for interactivity */
+.delete-btn {
+  background-color: #eb0404;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.favorites-list {
+  background-color: #0a91df;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
