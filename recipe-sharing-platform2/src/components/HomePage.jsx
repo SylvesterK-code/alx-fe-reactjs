@@ -36,14 +36,14 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F7F2] px-6 py-10">
-      <Link to="/add-recipe">
+      {/* <Link to="/add-recipe">
         <Button variant="primary" icon={FaPlus}>
           Add New Recipe
         </Button>
-      </Link>
+      </Link> */}
 
       {/* Page Header */}
-      <h1 className="text-4xl font-bold text-green-700 text-center mb-10">
+      <h1 className="text-4xl font-bold text-green-700 text-center mb-10 pt-6">
         🍽️ Recipe Sharing Platform
       </h1>
 

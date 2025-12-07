@@ -2,8 +2,9 @@
 
 ## Setting Up a React Application for a Recipe Sharing Platform with Tailwind CSS
 
-npm create vite@latest recipe-sharing-platforact    v4
+npm create vite@latest recipe-sharing-platforact  -- --template react v4
 npm install tailwindcss @tailwindcss/vite           v4
+
 
 npm install -D tailwindcss postcss autoprefixer     v4 
           
@@ -11,6 +12,14 @@ npx tailwindcss init -p     not work in tailwind v4
 npx tailwindcss init       not work in tailwind v4
 
 npm install tailwindcss
+
+npm install framer-motion
+
+npm install firebase  ------ to load gmail
+
+
+
+
 
 
 
@@ -1104,6 +1113,15 @@ export default RecipeDetail;
 
 
 
+npm install framer-motion
+
+
+
+
+
+
+
+
 
 
 
@@ -1119,6 +1137,10 @@ export default RecipeDetail;
 🔸 Adding categories
 🔸 Improving UI with Tailwind + your saved design layout
 
+🔥 Make the Footer also responsive + commented
+🔥 Add a sticky bottom navigation on mobile
+🔥 Add Light/Dark mode toggle inside the header
+
 add header(navbar-home, addrecipe, signin, signup, contact, about) and footer (add social media icons)
 
 modify the dataase to accept date from the form
@@ -1128,3 +1150,50 @@ add sign up and and login page
 add about page 
 
 add contact page
+
+
+
+
+
+
+
+### load and login with email
+
+// src/firebase.js
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MSG_ID",
+  appId: "YOUR_APP_ID",
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+👉 Get your Firebase config from console.firebase.google.com
+Go to Project → Settings → Config
+
+
+
+### backend 
+npm install -g json-server
+json-server --watch db.json --port 5000
+
+Run this command in your project root:
+
+npm install -g json-server
+
+
+Then run:
+
+json-server --watch db.json --port 5000
+
+
+The data will now be available at:
+
+Users endpoint → http://localhost:5000/users

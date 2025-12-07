@@ -19,11 +19,11 @@ const RecipeDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <Link to="/">
+      {/* <Link to="/">
         <Button variant="primary" icon={FaHome}>
           Back to Home
         </Button>
-      </Link>
+      </Link> */}
 
       {/* Recipe Card */}
       <div className="bg-white shadow-lg rounded-xl p-6 max-w-4xl mx-auto">

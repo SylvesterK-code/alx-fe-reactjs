@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "2ece",
+      "fullname": "Sylvester K",
+      "email": "sylvesterkeystarling@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1e1a",
+      "fullname": "Queen Elorm",
+      "email": "queen@gmail.com",
+      "password": "qelorm"
+    },
+    {
+      "id": "26e6",
+      "fullname": "Sylvester",
+      "email": "sylvesterkeystarling@gmail.com",
+      "password": "qwerty"
+    }
+  ]
+}
