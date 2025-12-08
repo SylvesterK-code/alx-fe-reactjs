@@ -54,7 +54,7 @@ const RecipeDetail = () => {
         {/* Steps Section */}
         <div>
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-            Cooking Instructions
+            instructions
           </h2>
           <ol className="list-decimal list-inside text-gray-700 space-y-2">
             {recipe.steps.map((step, index) => (
