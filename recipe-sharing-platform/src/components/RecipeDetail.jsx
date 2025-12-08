@@ -42,7 +42,7 @@ const RecipeDetail = () => {
         {/* Ingredients Section */}
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-            Ingredients
+            ingredients
           </h2>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             {recipe.ingredients.map((item, index) => (
