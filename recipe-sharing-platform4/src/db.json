@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "2ece",
+      "fullname": "Sylvester K",
+      "email": "sylvesterkeystarling@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "1e1a",
+      "fullname": "Queen Elorm",
+      "email": "queen@gmail.com",
+      "password": "qelorm"
+    },
+    {
+      "id": "197f",
+      "fullname": "Sylvester",
+      "email": "sylvesterkeystarling@gmail.com",
+      "password": "asdfgh"
+    },
+    {
+      "id": "3fc6",
+      "fullname": "Kofi",
+      "email": "sylvester13.skn.skn@gmail.com",
+      "password": "asdfgh"
+    },
+    {
+      "id": "7841",
+      "fullname": "Kofi",
+      "email": "sylvester13.skn.skn@gmail.com",
+      "password": "asdfgh"
+    },
+    {
+      "id": "bf65",
+      "fullname": "Elorm Q",
+      "email": "sylvester13.skn.skn@gmail.com",
+      "password": "asdfgh"
+    },
+    {
+      "id": "dcce",
+      "fullname": "Elorm Q",
+      "email": "sylvester132.skn.skn@gmail.com",
+      "password": "asdfgh"
+    }
+  ]
+}

@@ -44,7 +44,7 @@ const HomePage = () => {
 
       {/* Page Header */}
       <h1 className="text-4xl font-bold text-green-700 text-center mb-10 pt-6">
-        🍽️ Recipe Sharing Platform
+         Recipe Sharing Platform
       </h1>
 
       {/* Grid */}

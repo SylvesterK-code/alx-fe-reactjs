@@ -32,7 +32,7 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-white font-bold text-xl">
-          RecipeApp
+         🍽️ RecipeApp
         </Link>
 
         {/* Hamburger Icon - appears only on mobile */}

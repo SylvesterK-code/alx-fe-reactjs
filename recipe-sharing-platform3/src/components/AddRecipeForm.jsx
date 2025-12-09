@@ -1,3 +1,6 @@
+// src/components/AddRecipeForm.jsx
+
+
 import { useState } from "react";
 import Button from "./ui/Button";
 import { FaPlus, FaHome } from "react-icons/fa";
@@ -64,13 +67,13 @@ const AddRecipeForm = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black px-4 sm:px-6 py-8 md:py-12 bg-gradient-to-br from-green-100 to-green-300 dark:from-gray-900 dark:to-gray-800 dark:to-green">
-      {/* <div className="mb-6">
+      <div className="mb-6">
         <Link to="/">
           <Button variant="primary" icon={FaHome}>
             Back to Home
           </Button>
         </Link>
-      </div> */}
+      </div>
 
       <div className="max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto p-6 sm:p-8 bg-green-400 dark:bg-gray-900 rounded-xl shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">

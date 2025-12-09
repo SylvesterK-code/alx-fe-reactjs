@@ -1,3 +1,7 @@
+
+
+// src/components/Signup.jsx
+
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";

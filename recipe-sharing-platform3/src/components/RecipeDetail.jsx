@@ -1,3 +1,6 @@
+
+// src/components/RecipeDetail.jsx
+
 import { useParams, Link } from "react-router-dom";
 import recipesData from "../data.json";
 import { FaHome } from "react-icons/fa";
