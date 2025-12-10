@@ -68,7 +68,6 @@ const SignIn = () => {
   //     return;
   //   }
   // };
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-gradient-to-br from-green-100 to-green-300 dark:from-gray-900 dark:to-gray-800">
@@ -112,7 +111,7 @@ const SignIn = () => {
                 placeholder="Enter your password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full p-3 bg-transparent outline-none dark:text-white"
+                className="w-full p-3 bg-transparent outline-none dark:text-white "
               />
               <button
                 type="button"
