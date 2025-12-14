@@ -172,7 +172,7 @@
 
 
 
-
+// src/components/ScoreSummary.jsx
 // display percentage score to the left of the score
 
 import { decode } from "../utils/helpers";
@@ -240,14 +240,14 @@ export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
         <div className="flex flex-col sm:flex-row gap-3 justify-end">
           <button
             onClick={onRetake}
-            className="px-4 py-2 border rounded-lg hover:bg-slate-100 transition"
+            className="w-full sm:w-auto px-4 py-2 border rounded-lg"
           >
             Retake same quiz
           </button>
 
           <button
             onClick={onNewQuiz}
-            className="px-4 py-2 bg-slate-800 text-white rounded-lg hover:opacity-90 transition"
+            className="w-full sm:w-auto px-4 py-2 bg-slate-800 text-white rounded-lg"
           >
             New Quiz
           </button>

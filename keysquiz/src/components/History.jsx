@@ -1,11 +1,10 @@
-// import React from "react";
-// import { decode } from "../utils/helpers";
+// src/components/History.jsx
 
 export default function History({ history, onClear }) {
   if (!history || history.length === 0) {
     return (
       <div className="max-w-3xl mx-auto p-4">
-        <div className="bg-gray-100 p-4 rounded shadow text-sm text-slate-500">
+        <div className="bg-white p-4 rounded shadow text-sm text-slate-500">
           No quiz history yet.
         </div>
       </div>
@@ -17,7 +16,7 @@ export default function History({ history, onClear }) {
       <div className="bg-white p-4 rounded shadow">
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-medium">Quiz History</h3>
-          <button onClick={onClear} className="text-sm text-red-600">
+          <button onClick={onClear} className="text-sm text-red-600 hover:underline">
             Clear history
           </button>
         </div>

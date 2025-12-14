@@ -1,6 +1,9 @@
+// src/components/QuizStart.jsx
+
 import React, { useEffect, useState } from "react";
 import { fetchCategories } from "../services/api";
 import SearchBar from "./SearchBar";
+import { NavLink } from "react-router-dom";
 
 export default function QuizStart({ onStart }) {
   const [categories, setCategories] = useState([]);
@@ -47,10 +50,16 @@ export default function QuizStart({ onStart }) {
           Create a Quiz
         </h2>
 
-        {err && <div className="text-red-600 mb-3">{err}</div>}
+        {err && (
+          <div className="mb-4 rounded bg-red-50 p-3 text-sm text-red-700">
+            {err}
+          </div>
+        )}
 
         {loading ? (
-          <div className="text-center py-4">Loading categories...</div>
+          <div className="animate-pulse text-center py-10 text-slate-500">
+            Loading quiz categories…
+          </div>
         ) : (
           <>
             {/* Responsive grid */}
@@ -135,7 +144,7 @@ export default function QuizStart({ onStart }) {
             <div className="flex flex-col sm:flex-row sm:justify-end gap-3">
               <button
                 onClick={handleStart}
-                className="w-full sm:w-auto px-5 py-2 bg-slate-800 text-white rounded hover:opacity-95 text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 py-3 bg-slate-800 text-white rounded-lg text-sm sm:text-base"
               >
                 Start Quiz
               </button>

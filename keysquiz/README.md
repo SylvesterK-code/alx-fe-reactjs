@@ -7,6 +7,10 @@ npm create vite@latest keysquiz -- --template react
 npm install tailwindcss @tailwindcss/vite
 npm install he
 
+
+npm install react-icons
+npm install react-router-dom
+
 // vite.config.js
 
 import { defineConfig } from 'vite'

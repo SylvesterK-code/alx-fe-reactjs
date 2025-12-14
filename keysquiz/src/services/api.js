@@ -1,3 +1,5 @@
+
+// src/services/api.js
 const BASE = 'https://opentdb.com';
 
 export async function fetchCategories() {

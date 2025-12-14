@@ -1,3 +1,5 @@
+
+// src/components/SearchBar.jsx
 import React from "react";
 
 export default function SearchBar({
