@@ -4,19 +4,33 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !email || !password) {
-      setError("All fields are required");
+    const newErrors = {};
+
+    if (!username) {
+      newErrors.username = "Username is required";
+    }
+
+    if (!email) {
+      newErrors.email = "Email is required";
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       setSuccess("");
       return;
     }
 
-    setError("");
+    setErrors({});
 
     try {
       const response = await fetch(
@@ -37,7 +51,7 @@ const RegistrationForm = () => {
         setPassword("");
       }
     } catch {
-      setError("Something went wrong. Please try again.");
+      setErrors({ api: "Something went wrong. Please try again." });
     }
   };
 
@@ -51,33 +65,48 @@ const RegistrationForm = () => {
         Built using React <span className="font-semibold">useState</span>
       </p>
 
-      {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
+      {errors.api && <p className="text-red-500 text-sm mb-3">{errors.api}</p>}
       {success && <p className="text-green-500 text-sm mb-3">{success}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          placeholder="Username"
-          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <div>
+          <input
+            type="text"
+            placeholder="Username"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          {errors.username && (
+            <p className="text-red-500 text-sm mt-1">{errors.username}</p>
+          )}
+        </div>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          )}
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errors.password && (
+            <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+          )}
+        </div>
 
         <button
           type="submit"
@@ -87,7 +116,6 @@ const RegistrationForm = () => {
         </button>
       </form>
 
-      {/* Advantages */}
       <div className="mt-6 bg-blue-50 p-4 rounded-lg">
         <h3 className="font-semibold mb-2">Advantages of Controlled Forms</h3>
         <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
