@@ -32,23 +32,12 @@
 
 // export default App;
 
-
-
-
-
-
-
 // src/App.jsx
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile"; // make sure this is in pages/
+import Profile from "./components/Profile"; // make sure this is in pages/
 import BlogPost from "./pages/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 import "./index.css";
