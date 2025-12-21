@@ -1,224 +1,100 @@
-// does not display percentage score
-
-
-// // import React from "react";
-// import { decode } from "../utils/helpers";
-
-// export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
-//   const total = results.length;
-//   const correct = results.filter((r) => r.isCorrect).length;
-
-//   return (
-//     <div className="max-w-3xl mx-auto p-6">
-//       <div className="bg-white rounded shadow p-6">
-//         <h2 className="text-2xl font-semibold mb-2">Quiz Complete</h2>
-//         <p className="mb-4">
-//           Your Score: <strong>{correct}</strong> / {total}
-//         </p>
-
-//         <div className="mb-4">
-//           <h3 className="font-medium mb-2">Review</h3>
-//           <div className="space-y-3">
-//             {results.map((r, i) => (
-//               <div key={i} className="p-3 border rounded bg-slate-50">
-//                 <div className="text-sm text-slate-600">Q{i + 1}</div>
-//                 <div className="font-medium">{decode(r.question)}</div>
-//                 <div className="mt-1 text-sm">
-//                   Your answer: {decode(r.selected || "No answer")}{" "}
-//                   {r.isCorrect ? "✅" : "❌"}
-//                 </div>
-//                 {!r.isCorrect && (
-//                   <div className="text-sm text-green-700">
-//                     Correct: {decode(r.correct)}
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="flex gap-3 justify-end">
-//           <button onClick={onRetake} className="px-4 py-2 border rounded">
-//             Retake same quiz
-//           </button>
-//           <button
-//             onClick={onNewQuiz}
-//             className="px-4 py-2 bg-slate-800 text-white rounded"
-//           >
-//             New Quiz
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-// ------------------ display percntage score to the below the score
-
-// import { decode } from "../utils/helpers";
-
-// export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
-//   const total = results.length;
-//   const correct = results.filter((r) => r.isCorrect).length;
-
-//   const percentage = ((correct / total) * 100).toFixed(1); // 1 decimal
-
-//   return (
-//     <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
-//       <div className="bg-white rounded-lg shadow p-4 sm:p-6 lg:p-8">
-//         <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-//           Quiz Complete
-//         </h2>
-
-//         {/* Score Overview */}
-//         <p className="mb-4 text-base sm:text-lg">
-//           Your Score: <strong className="text-slate-800">{correct}</strong> /{" "}
-//           {total}
-//         </p>
-
-//         <div className="mb-6">
-//           <div className="text-lg font-medium">
-//             Percentage:{" "}
-//             <span
-//               className={`font-bold ${
-//                 percentage >= 70
-//                   ? "text-green-600"
-//                   : percentage >= 40
-//                     ? "text-yellow-600"
-//                     : "text-red-600"
-//               }`}
-//             >
-//               {percentage}%
-//             </span>
-//           </div>
-//         </div>
-
-//         {/* Review Section */}
-//         <div className="mb-6">
-//           <h3 className="font-semibold text-lg mb-3">Review Answers</h3>
-
-//           <div className="space-y-4">
-//             {results.map((r, i) => (
-//               <div
-//                 key={i}
-//                 className="p-4 border rounded-lg bg-slate-50 shadow-sm"
-//               >
-//                 <div className="text-xs text-slate-500 mb-1">
-//                   Question {i + 1}
-//                 </div>
-
-//                 <div className="font-medium text-sm sm:text-base">
-//                   {decode(r.question)}
-//                 </div>
-
-//                 <div className="mt-2 text-sm sm:text-base">
-//                   <span className="font-medium">Your answer:</span>{" "}
-//                   {decode(r.selected || "No answer")}{" "}
-//                   {r.isCorrect ? (
-//                     <span className="text-green-600">✔ Correct</span>
-//                   ) : (
-//                     <span className="text-red-600">✘ Incorrect</span>
-//                   )}
-//                 </div>
-
-//                 {!r.isCorrect && (
-//                   <div className="mt-1 text-sm text-green-700">
-//                     Correct: {decode(r.correct)}
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Buttons */}
-//         <div className="flex flex-col sm:flex-row gap-3 justify-end">
-//           <button
-//             onClick={onRetake}
-//             className="px-4 py-2 border rounded hover:bg-slate-100 transition"
-//           >
-//             Retake same quiz
-//           </button>
-
-//           <button
-//             onClick={onNewQuiz}
-//             className="px-4 py-2 bg-slate-800 text-white rounded hover:opacity-90 transition"
-//           >
-//             New Quiz
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
 
 
 // src/components/ScoreSummary.jsx
-// display percentage score to the left of the score
+// This component displays the quiz results summary,
+// including percentage score, detailed review, and action buttons.
 
 import { decode } from "../utils/helpers";
 
 export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
+  // Total number of questions answered
   const total = results.length;
+
+  // Count how many answers were correct
   const correct = results.filter((r) => r.isCorrect).length;
 
+  // Calculate percentage score
   const percentage = ((correct / total) * 100).toFixed(0);
 
   return (
-    <div className="max-w-3xl mx-auto p-4 sm:p-6">
-      <div className="bg-white rounded-lg shadow p-4 sm:p-6">
-        {/* Header */}
-        <h2 className="text-xl sm:text-2xl font-semibold mb-3">
+    /* 
+      Outer wrapper:
+      - Centers content horizontally
+      - Adds responsive padding
+      - Leaves room for fixed header if present
+    */
+    <div className="max-w-3xl mx-auto p-4 sm:p-6 mt-20">
+      {/* 
+        Card container:
+        - Light & dark backgrounds
+        - Rounded corners and shadow
+      */}
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg p-4 sm:p-6 transition-colors">
+        
+        {/* ================= HEADER ================= */}
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-slate-900 dark:text-white">
           Quiz Complete
         </h2>
 
-        {/* Score section */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
-          <p className="text-base sm:text-lg">
-            Your Score: <strong className="text-green-700">{correct}</strong> /{" "}
-            {total}
+        {/* ================= SCORE SECTION ================= */}
+        {/* 
+          Layout:
+          - Stack on mobile
+          - Horizontal layout on larger screens
+        */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+          
+          {/* Numeric score */}
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300">
+            Your Score:{" "}
+            <strong className="text-green-700 dark:text-green-400">
+              {correct}
+            </strong>{" "}
+            / {total}
           </p>
-          <p className="text-base sm:text-lg font-semibold text-blue-600 mt-1 sm:mt-0">
-            {percentage}%
-          </p>
+
+          {/* Percentage badge */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-400">
+              Percentage
+            </span>
+            <span className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-semibold">
+              {percentage}%
+            </span>
+          </div>
         </div>
 
-        {/* Review */}
+        {/* ================= REVIEW SECTION ================= */}
         <div className="mb-6">
-          <h3 className="font-medium mb-3 text-lg">Review</h3>
+          <h3 className="font-medium text-lg mb-3 text-slate-800 dark:text-slate-200">
+            Review
+          </h3>
+
+          {/* List of question reviews */}
           <div className="space-y-4">
             {results.map((r, i) => (
               <div
                 key={i}
-                className="p-4 border rounded-lg bg-slate-50 hover:bg-slate-100 transition"
+                className="
+                  p-4 rounded-lg border
+                  bg-slate-50 dark:bg-slate-800
+                  border-slate-200 dark:border-slate-700
+                  hover:bg-slate-100 dark:hover:bg-slate-700
+                  transition
+                "
               >
-                <div className="text-xs sm:text-sm text-slate-500 mb-1">
+                {/* Question number */}
+                <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-1">
                   Question {i + 1}
                 </div>
-                <div className="text-sm sm:text-base font-medium mb-2">
+
+                {/* Question text */}
+                <div className="text-sm sm:text-base font-medium mb-2 text-slate-900 dark:text-white">
                   {decode(r.question)}
                 </div>
 
-                <div className="text-sm sm:text-base">
+                {/* User answer */}
+                <div className="text-sm sm:text-base text-slate-700 dark:text-slate-300">
                   Your answer:{" "}
                   <span className="font-medium">
                     {decode(r.selected || "No answer")}
@@ -226,9 +102,11 @@ export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
                   {r.isCorrect ? "✅" : "❌"}
                 </div>
 
+                {/* Correct answer (only shown if wrong) */}
                 {!r.isCorrect && (
-                  <div className="text-sm text-green-700 mt-1">
-                    Correct answer: <strong>{decode(r.correct)}</strong>
+                  <div className="text-sm mt-1 text-green-700 dark:text-green-400">
+                    Correct answer:{" "}
+                    <strong>{decode(r.correct)}</strong>
                   </div>
                 )}
               </div>
@@ -236,18 +114,38 @@ export default function ScoreSummary({ results, onRetake, onNewQuiz }) {
           </div>
         </div>
 
-        {/* Buttons */}
+        {/* ================= ACTION BUTTONS ================= */}
+        {/* 
+          Buttons:
+          - Full width on mobile
+          - Inline on larger screens
+        */}
         <div className="flex flex-col sm:flex-row gap-3 justify-end">
+          
+          {/* Retake quiz button */}
           <button
             onClick={onRetake}
-            className="w-full sm:w-auto px-4 py-2 border rounded-lg"
+            className="
+              w-full sm:w-auto px-4 py-2 rounded-lg border
+              border-slate-300 dark:border-slate-600
+              text-slate-700 dark:text-slate-200
+              hover:bg-slate-100 dark:hover:bg-slate-700
+              transition
+            "
           >
             Retake same quiz
           </button>
 
+          {/* New quiz button */}
           <button
             onClick={onNewQuiz}
-            className="w-full sm:w-auto px-4 py-2 bg-slate-800 text-white rounded-lg"
+            className="
+              w-full sm:w-auto px-4 py-2 rounded-lg
+              bg-slate-800 dark:bg-blue-600
+              text-white
+              hover:bg-slate-900 dark:hover:bg-blue-700
+              transition
+            "
           >
             New Quiz
           </button>
