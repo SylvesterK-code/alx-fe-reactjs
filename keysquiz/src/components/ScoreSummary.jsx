@@ -2,7 +2,7 @@
 
 // src/components/ScoreSummary.jsx
 // This component displays the quiz results summary,
-// including percentage score, detailed review, and action buttons.
+// including percentage score, detailed review,  and action buttons.
 
 import { decode } from "../utils/helpers";
 
